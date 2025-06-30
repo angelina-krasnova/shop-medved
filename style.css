@@ -1,0 +1,731 @@
+
+@font-face {
+    font-family: 'Amaltea';
+    src: url('Amaltea.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Amaltea', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffc107;
+    color: #333;
+    font-size: 1.125em;
+    line-height: 1.6;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.25em;
+    max-width: 75em;
+}
+
+.section {
+    padding: 3.75em 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #795548;
+    font-family: 'Amaltea', sans-serif;
+    font-size: 3em;
+    margin-bottom: 1.25em;
+}
+
+/* Шапка сайта */
+header {
+    background: linear-gradient(to top, #ffc107, #dfa90a);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom-left-radius: 1.25em; 
+    border-bottom-right-radius: 1.25em;
+    height: 6.25em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25em;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 6.25em;
+}
+
+
+/* Контейнер для логотипа и текста */
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    width: 9.375em;
+    height: auto;
+    margin-right: 1.25em;
+}
+
+.header-text {
+    margin-left: auto;
+    margin-right: 3.125em;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #fff;
+}
+
+header .sloganmenu {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Навигационное меню */
+nav {
+    margin-right: 0.625em;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-left: 1.25em;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #f8f1c9;
+}
+
+/* Шапка для мобильных */
+@media (max-width: 48em) {
+     header {
+        height: 60px;
+        padding: 0;
+    }
+
+    .header-container {
+        height: 100%;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 101;
+        margin-left: 20em;
+    }
+    
+    .header-logo {
+        position: absolute;
+        left: 50%;
+        bottom:1%;
+        transform: translateX(-50%);
+    }
+    
+    .header-logo .logo {
+        width: 100px;
+        height: auto;
+    }
+    
+    .header-text {
+        display: none;
+    }
+    
+    .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+    
+    /* Меню */
+    nav {
+        position: relative;
+    }
+    
+    .menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #ffc003;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px 0 40px 0;
+        transition: top 0.3s ease;
+        z-index: 100;
+        margin: 0;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .menu.active {
+        top: 0;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+    }
+    
+    .mobile-menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .mobile-menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+}
+
+
+/* Секция "О нас" */
+
+#about {
+    background: linear-gradient(to top, #ffc107,#ffc107,#ffc107,#ffc107, #ffe79f);
+    padding: 3.75em 0;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5em;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 18.75em;
+    padding-right: 1.875em;
+}
+
+.about-text h1 {
+    font-size: 3.5rem;
+    color: #5d4037;
+    margin-bottom: 0.9375em;
+    font-family: 'Amaltea', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.slogan {
+    font-size: 1.8rem;
+    color: #795548;
+    font-style: italic;
+    margin-bottom: 1.5625em;
+    position: relative;
+    display: inline-block;
+}
+
+.slogan::after {
+    content: '';
+    position: absolute;
+    bottom: -0.625em;
+    left: 0;
+    width: 100%;
+    height: 0.1875em;
+    background: linear-gradient(to right, #d4a017, transparent);
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #5d4037;
+}
+
+.about-logo {
+    flex: 0 0 15.625em;
+    text-align: center;
+}
+
+.about-logo .logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.9375em;
+    box-shadow: 0 0.3125em 0.9375em rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-logo .logo:hover {
+    transform: scale(1.05);
+}
+
+/* Секция "Продукция" */
+#products {
+    background-color: #fff9d6;
+}
+
+/* Сетка шестиугольников для продукции */
+.hexagon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    gap: 0.625em;
+    justify-items: center;
+}
+
+/* Тут шахматный порядок */
+.hexagon-grid > *:nth-child(even) {
+    margin-top: 18.75em;
+}
+
+.hexagon-product {
+    width: 20.625em;
+    height: 23.75em;
+    background-color: #f8f1c9;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.625em;
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hexagon-product:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.375em 0.625em rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hexagon-inner-product {
+    color: #795548;
+    padding: 0.625em;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hexagon-inner-product i {
+    margin-bottom: 0.625em;
+}
+
+.hexagon-inner-product h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Скрытый текст при наведении */
+.hexagon-hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #795548;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9375em;
+    text-align: center;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.hexagon-product:hover .hexagon-inner-product {
+    opacity: 0;
+}
+
+.hexagon-product:hover .hexagon-hover-text {
+    opacity: 1;
+}
+
+/* Секция "Отзывы" */
+#reviews {
+    background-color: #f8f1c9;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+.review {
+    background-color: #fff;
+    padding: 1.25em;
+    border-radius: 0.625em;
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
+}
+
+.review-author {
+    font-weight: bold;
+    margin-bottom: 0.3125em;
+    color: #795548;
+}
+
+.review-date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 0.625em;
+}
+
+.review-text {
+    line-height: 1.4;
+}
+
+/* Секция "Местоположение" */
+#location p {
+    text-align: center;
+}
+
+#location img {
+    width: 100%;
+    max-width: 56.25em;
+    height: auto;
+    display: block;
+    margin: 1.875em auto;
+    border-radius: 0.9375em;
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+}
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.9375em 0;
+    font-size: 1.1em;
+    border-top-left-radius: 1.25em;
+    border-top-right-radius: 1.25em;
+}
+
+#spec {
+    background-color: #f8f1c9;
+}
+
+/*Специальные предложения*/
+
+.slider-container {
+            max-width: 81.25em;
+            margin: 1em auto;
+            padding: 1.25em;
+            position: relative;
+        }
+        
+        .slider-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.7em;
+            margin-top: 0.7;
+            color: #795548;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.9375em;
+            box-shadow: 0 0.625em 1.875em rgba(0,0,0,0.1);
+            background-color: rgb(255, 249, 240);
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .slide-content {
+            flex: 1;
+            min-width: 18.75em;
+            padding: 2.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide-image {
+            flex: 0.8;
+            width: 30%;
+            height: 50%;
+            margin-top: 9.375em;
+            min-width: 18.75em;
+            background-size: cover;
+            background-position: center;
+            min-height: 9.375em;
+        }
+        
+        .slide-icon {
+            font-size: 2rem;
+            margin-bottom: 0.9375em;
+        }
+        
+        .slide-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.9375em;
+            color: #d4a017;
+        }
+        
+        .slide-subtitle {
+            font-style: italic;
+            font-size: 2.7rem;
+            margin-bottom: 1.25em;
+            color: #8b6b3d;
+        }
+        
+        .slide-description {
+            font-size: 2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5625em;
+        }
+        
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.25em;
+        }
+        
+        .slider-dots {
+            display: flex;
+            gap: 0.625em;
+        }
+        
+        .slider-dot {
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 50%;
+            background-color: #e0c9a6;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-dot.active {
+            background-color: #d4a017;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3.125em;
+            height: 3.125em;
+            background-color: rgba(255,255,255,0.7);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #d4a017;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0.125em 0.625em rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .slider-btn:hover {
+            background-color: white;
+            color: #b8860b;
+        }
+        
+        .slider-btn-prev {
+            left: 1.25em;
+        }
+        
+        .slider-btn-next {
+            right: 1.25em;
+        }
+
+/*Слайдер, мобильная версия*/
+@media (max-width: 48em) {
+        .slide {
+                flex-direction: column;
+            }
+        .slide-title {
+            font-size: 2rem;
+            margin-bottom: 0em;
+            margin-top: 0.2em;
+            color: #d4a017;
+        }
+            
+            .slider-btn {
+                width: 2.5em;
+                height: 2.5em;
+                font-size: 1.2rem;
+            }
+        
+        .slide-subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-bottom: 0.2em;
+            margin-top: 0.2em;
+            color: #8b6b3d;
+        }
+        
+        .slide-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 0.2;
+            margin-bottom: 0.5em;
+        }
+
+        .slide-image {
+            flex: 0.8;
+            order: -1;
+            min-height: 12.5em;
+            text-align: center;
+            width: 20%;
+            height: auto;
+            margin-left: 1.3em;
+            margin-top: 2em;
+            margin-bottom: 0em;
+            min-width: 18.75em;
+            background-size: cover;
+            background-position: center;
+        }
+}
+
+/* Для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 48em) {
+    body {
+        font-size: 1em;
+    }
+
+    .container {
+        width: 90%;
+        padding: 1em;
+    }
+
+    h1, h2 {
+        font-size: 2.5em;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 1em;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.5em;
+    }
+
+    header .logo {
+        margin-right: 0;
+        margin-bottom: 0.5em;
+        width: 8em;
+    }
+
+    .header-text {
+        margin: 0;
+        text-align: center;
+    }
+    
+
+    nav {
+        margin-right: 0;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 0.5em 0;
+    }
+
+     .about-header {
+        flex-direction: column;
+    }
+    
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 1.875em;
+    }
+    
+    .about-logo {
+        margin: 0 auto;
+    }
+    
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .slogan {
+        font-size: 1.4rem;
+    }
+    
+    .menu-btn {
+        padding: 0.75em 0.9375em;
+        font-size: 1rem;
+    }
+
+    /* Сетка шестиугольников */
+    .hexagon-grid {
+        padding: 0em 5.5em;   
+        row-gap: 14em;
+        grid-template-columns: repeat(auto-fit, minmax(3.6em, 1fr));
+    }
+    .hexagon-grid > *:nth-child(even) {
+        margin-top: 0em;
+        transform: translateY(16em);  
+    }
+    .hexagon-grid > *:nth-child(even):hover {
+    transform: translateY(16em) scale(1.1);
+    }
+    .hexagon-product {
+        width: 16em; 
+        height: 18em; 
+    }
+}

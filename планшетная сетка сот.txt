@@ -1,0 +1,21 @@
+для планшетной версии
+
+/* Сетка шестиугольников */
+    .hexagon-grid {
+        padding: 0em 5em;   
+        row-gap: 8em;
+        grid-template-columns: repeat(auto-fit, minmax(12em, 1fr)); /* Уменьшаем размер шестиугольников */
+    }
+    .hexagon-grid > *:nth-child(even) {
+        margin-top: 0em; /* Уменьшаем отступ */
+        transform: translateY(15em);  
+    }
+    .hexagon-grid > *:nth-child(even):hover {
+    transform: translateY(15em) scale(1.1); /* Смещение + увеличение */
+    }
+    
+
+    .hexagon-product {
+        width: 20em; 
+        height: 22em; 
+    }
